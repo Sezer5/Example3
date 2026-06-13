@@ -25,6 +25,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">*</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">Title</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
@@ -34,16 +35,17 @@
                                 @foreach ($articles as $rs)
                                     <tr class="">
                                         <td>{{ $rs->id }}</td>
+                                        <td><img src="{{asset( $rs->thumbnail )}}" width="50"></td>
                                         <td>{{ $rs->title }}</td>
                                         <td>
-                                            <a href="{{ route('admin.keyword.edit', $rs->id) }}" class="btn btn-warning"><i
+                                            <a href="{{ route('admin.article.edit', $rs->id) }}" class="btn btn-warning"><i
                                                     class="bi bi-pencil"></i></a>
                                         </td>
                                         <td>
                                             <a href="#" onclick="deleteItem({{ $rs->id }})"
                                                 class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                             <form id="{{ $rs->id }}"
-                                                action="{{ route('admin.keyword.destroy', $rs->id) }}" method="POST">
+                                                action="{{ route('admin.article.destroy', $rs->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                             </form>

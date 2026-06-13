@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 13 Haz 2026, 16:31:26
+-- Üretim Zamanı: 13 Haz 2026, 20:39:19
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.3.30
 
@@ -41,7 +41,7 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `title`, `desc`, `thumbnail`, `created_at`, `updated_at`) VALUES
-(1, 'Deneme', 'Deneme isimler Deneme isimler Deneme isimler Deneme isimler Deneme isimler Deneme isimler Deneme isimler Deneme isimler', 'storage/images/articles/1781268190-tshirt-7979851_1280.jpg', '2026-06-12 09:43:10', '2026-06-12 09:43:10');
+(2, 'Deneme', 'Deneme metinleri Deneme metinleri Deneme metinleri Deneme metinleri Deneme metinleri', 'storage/images/articles/1781383086-o2.jpg', '2026-06-13 17:38:06', '2026-06-13 17:38:06');
 
 -- --------------------------------------------------------
 
@@ -62,9 +62,8 @@ CREATE TABLE `article_keyword` (
 --
 
 INSERT INTO `article_keyword` (`id`, `article_id`, `keyword_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, NULL, NULL),
-(2, 1, 5, NULL, NULL),
-(3, 1, 6, NULL, NULL);
+(4, 2, 4, NULL, NULL),
+(5, 2, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -263,7 +262,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('kpwLyLqrL32CZjxfwhZnarDuid4Sar4U87jOKV76', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'eyJfdG9rZW4iOiJLdTkwTTVtVU5jb2pZWmRQd0QxWGRMY3BtRURPTHhXNWwydnR0eWFSIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hZG1pblwvYXJ0aWNsZSIsInJvdXRlIjoiYWRtaW4uYXJ0aWNsZS5pbmRleCJ9LCJfZmxhc2giOnsib2xkIjpbXSwibmV3IjpbXX0sImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjoxfQ==', 1781268191);
+('mjGRI0v5pRiPo16pFdxDxL8Sa90rVB2HnwdVXKSP', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'eyJfdG9rZW4iOiIwcGZtdUJ2Wkc1UUdwZGNsS1BGNE1aZkFzUWdDY3g4d1BJWldpcDFqIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hZG1pblwvYXJ0aWNsZSIsInJvdXRlIjoiYWRtaW4uYXJ0aWNsZS5pbmRleCJ9LCJfZmxhc2giOnsib2xkIjpbXSwibmV3IjpbXX0sImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjoxfQ==', 1781383086);
 
 -- --------------------------------------------------------
 
@@ -397,13 +396,13 @@ ALTER TABLE `users`
 -- Tablo için AUTO_INCREMENT değeri `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `article_keyword`
 --
 ALTER TABLE `article_keyword`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `failed_jobs`
