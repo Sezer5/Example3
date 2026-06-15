@@ -18,7 +18,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('admin.article.index')->with([
-            'articles' => Article::all()
+            'articles' => Article::with(['keywords'])->latest()->get()
         ]);
     }
 
@@ -74,9 +74,9 @@ class ArticleController extends Controller
      */
     public function update(UpdateArticleRequest $request, Article $article)
     {
-        if($request->validated()){
+        if ($request->validated()) {
             $data = $request->validated();
-            if($request->has('thumbnail')){
+            if ($request->has('thumbnail')) {
                 $this->removeImageFromArticle($article->thumbnail);
                 $data['thumbnail'] = $this->saveImage($request->thumbnail);
                 $article->update($data);
@@ -96,8 +96,8 @@ class ArticleController extends Controller
         $this->removeImageFromArticle($article->thumbnail);
         $article->delete();
         return redirect()->route('admin.article.index')->with([
-                    'success' => 'Article deleted successfully'
-                ]);
+            'success' => 'Article deleted successfully'
+        ]);
     }
 
     public function saveImage($file)
@@ -107,9 +107,10 @@ class ArticleController extends Controller
         return 'storage/images/articles/' . $file_path;
     }
 
-    public function removeImageFromArticle($file){
+    public function removeImageFromArticle($file)
+    {
         $path = public_path($file);
-        if(File::exists($path)){
+        if (File::exists($path)) {
             File::delete($path);
         }
     }

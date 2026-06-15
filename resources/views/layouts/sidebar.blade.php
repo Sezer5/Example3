@@ -8,6 +8,10 @@
                 Keywords</a></li>
         <li class="nav-item"><a href="{{ route('admin.article.index') }}" class="nav-link"><i
                     class="bi bi-file-earmark"></i> Articles</a></li>
+        <li class="nav-item">
+            <a href="{{ route('admin.novel.index') }}" class="nav-link">
+                <i class="bi bi-book"></i> Novels</a>
+        </li>
         <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-people me-2"></i> Kullanıcılar</a></li>
         <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-gear me-2"></i> Ayarlar</a></li>
     </ul>

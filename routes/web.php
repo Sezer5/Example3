@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\KeywordController;
+use App\Http\Controllers\Admin\NovelController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/admin/login', [AdminController::class, "login"])->name('admin.login');
@@ -16,4 +17,6 @@ Route::middleware('role:admin')->prefix('admin')->name('admin.')->group(function
     Route::resource('article', ArticleController::class);
 
     Route::resource('keyword', KeywordController::class);
+
+    Route::resource('novel', NovelController::class);
 });
