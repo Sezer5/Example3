@@ -26,6 +26,11 @@
                 <i class="bi bi-book"></i> Novels
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('admin.poem.index') }}" class="nav-link {{ Route::is('admin.poem.*') ? 'active' : '' }}">
+                <i class="bi bi-book"></i> Poems
+            </a>
+        </li>
 
     </ul>
 </nav>
